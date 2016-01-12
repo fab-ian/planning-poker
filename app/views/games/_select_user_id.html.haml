@@ -1,0 +1,8 @@
+%select{id: 'tmp_user_id'}
+  - User.all.each do |u|
+    %option{value: u.id} 
+      = u
+= link_to 'add','#', id: 'add_link'
+
+%p Users:
+%ul{id: 'users_list'}
