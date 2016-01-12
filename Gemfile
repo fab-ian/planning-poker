@@ -4,6 +4,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'devise'
 gem 'rails_admin'
+gem "twitter-bootstrap-rails"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
