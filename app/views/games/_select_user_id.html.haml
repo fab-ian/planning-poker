@@ -1,8 +1,14 @@
-%select{id: 'tmp_user_id'}
-  - User.all.each do |u|
-    %option{value: u.id} 
-      = u
-= link_to 'add','#', id: 'add_link'
+.row
+  .col-md-11
+    %select{id: 'selected_user_id', class: 'form-control'}
+      - User.all.each do |u|
+        %option{value: u.id} 
+          = u
+  .col-md-1      
+    = link_to 'add','#', id: 'add_link', class: 'btn btn-success'
 
-%p Users:
-%ul{id: 'users_list'}
+%h3 Users:
+%ul{id: 'users_list', class: 'list-group'}
+  - GameUser.get_users(params[:id]).each do |gu|
+    :javascript
+      $("#users_list").append(get_user_li_tag(#{gu.user_id}, '#{gu.user}', true, #{gu.id}))

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :games
+  resources :games do 
+    get 'remove_user', on: :member
+  end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users

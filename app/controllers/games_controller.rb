@@ -6,7 +6,7 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
-    @game.game_users.new
+    #@game.game_users.new
   end
 
   def create
@@ -37,7 +37,7 @@ class GamesController < ApplicationController
 
   private
   def params_game
-    params.require(:game).permit(:name, :content, game_users_attributes: [:id, :user_id])
+    params.require(:game).permit(:name, :content, game_users_attributes: [:id, :user_id, :_destroy])
   end
 
   def set_game
