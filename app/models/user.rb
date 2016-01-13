@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :game_users
   has_many :game, through: :game_users
+  has_many :games
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -4,8 +4,8 @@ $(function(){
     var user_name = $("#selected_user_id option:selected").text()
     user_li_tag = get_user_li_tag(user_id, user_name, false, 0)
 
-    $("#users_list").append(user_li_tag)
-
+    $("#users_list").append(user_li_tag);
+    event.preventDefault();
   });  
 });
 

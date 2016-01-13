@@ -1,16 +1,19 @@
 class GamesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_game, only: [:show, :edit, :update, :destroy]
+
   def index
-    @games = Game.all
+    @my_games = Game.where(user_id: current_user).order("created_at desc")
+    @games = Game.where("user_id <> ?", current_user).order("created_at desc")
   end
 
   def new
     @game = Game.new
-    #@game.game_users.new
   end
 
   def create
-    @game = Game.new(params_game)
+    #@game = Game.new(params_game)
+    @game = current_user.games.new(params_game)
 
     if @game.save!
       redirect_to game_url(@game), notice: 'Game was successfully created.'
