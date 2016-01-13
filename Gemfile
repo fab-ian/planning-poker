@@ -7,6 +7,8 @@ gem 'rails_admin'
 gem "twitter-bootstrap-rails"
 gem 'faker'
 gem 'jquery-turbolinks'
+gem 'dotenv-rails'
+gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
