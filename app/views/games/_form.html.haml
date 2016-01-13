@@ -16,6 +16,12 @@
       = render 'select_user_id'    
 
   .form-group
+    = f.label :status, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.select :status, Game.status, {}, class: 'form-control'
+    = f.error_span(:status)
+
+  .form-group
     .col-lg-offset-2.col-lg-10
       = f.submit nil,class: 'btn btn-primary'
       = link_to t('.cancel', :default => t("helpers.links.cancel")), games_path, :class => 'btn btn-default'

@@ -16,6 +16,10 @@
   - GameUser.get_users(params[:id]).each do |gu|
     %li.list-group-item= gu.user
 
+%p
+  %strong= model_class.human_attribute_name(:status) + ':'
+  %br
+  = @game.status
   
 = link_to t('.back', :default => t("helpers.links.back")), games_path, :class => 'btn btn-default'
 = link_to t('.edit', :default => t("helpers.links.edit")), edit_game_path(@game), :class => 'btn btn-default'

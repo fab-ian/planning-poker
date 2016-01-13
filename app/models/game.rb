@@ -4,4 +4,8 @@ class Game < ActiveRecord::Base
   belongs_to :user
   
   accepts_nested_attributes_for :game_users, allow_destroy: true
+
+  def self.status
+    %w[new active closed]
+  end
 end

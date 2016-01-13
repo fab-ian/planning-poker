@@ -12,7 +12,6 @@ class GamesController < ApplicationController
   end
 
   def create
-    #@game = Game.new(params_game)
     @game = current_user.games.new(params_game)
 
     if @game.save!
@@ -40,7 +39,7 @@ class GamesController < ApplicationController
 
   private
   def params_game
-    params.require(:game).permit(:name, :content, game_users_attributes: [:id, :user_id, :_destroy])
+    params.require(:game).permit(:name, :content, :status, game_users_attributes: [:id, :user_id, :_destroy])
   end
 
   def set_game
