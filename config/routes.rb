@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :game_users, only: [:update]
+
   resources :games do 
     get 'remove_user', on: :member
   end

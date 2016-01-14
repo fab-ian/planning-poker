@@ -26,7 +26,7 @@ class GamesController < ApplicationController
       redirect_to game_url(@game), notice: 'Game was successfully updated'
     else
       render :new
-    end  
+    end        
   end  
 
   def destroy
@@ -35,6 +35,11 @@ class GamesController < ApplicationController
     else
       redirect_to games_url, notice: 'Game wasn\'t successfully destroy'      
     end
+  end
+
+  def show
+    @fibonacci = [1, 2, 3, 5, 8, 13, 21, 34, 56]
+    @game_user = GameUser.find_by(game_id: params[:id], user_id: current_user.id)
   end
 
   private

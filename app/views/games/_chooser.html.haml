@@ -1,0 +1,8 @@
+#chooser
+  = form_for @game_user, remote: true do |f|  
+    .form-group
+         
+      - @fibonacci.each do |fibo|
+        = f.label :score, fibo, for: 'game_user_score_' + fibo.to_s, class: 'control_label'
+        = f.radio_button :score, fibo, class: 'form_control'          
+      = f.submit 'accept your choice'
