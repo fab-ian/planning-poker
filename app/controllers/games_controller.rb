@@ -40,6 +40,8 @@ class GamesController < ApplicationController
   def show
     @fibonacci = [1, 2, 3, 5, 8, 13, 21, 34, 56]
     @game_user = GameUser.find_by(game_id: params[:id], user_id: current_user.id)
+    cvr = CalculateVoteResult.new(params[:id])    
+    @vote_result = cvr.get
   end
 
   private
