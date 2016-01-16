@@ -3,8 +3,8 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
   def index
-    @my_games = Game.where(user_id: current_user).order("created_at desc")
-    @games = Game.where("user_id <> ?", current_user).order("created_at desc")
+    @my_games = Game.my_games(current_user)
+    @games = Game.not_my_games(current_user)
   end
 
   def new
@@ -40,8 +40,12 @@ class GamesController < ApplicationController
   def show
     @fibonacci = [1, 2, 3, 5, 8, 13, 21, 34, 56]
     @game_user = GameUser.find_by(game_id: params[:id], user_id: current_user.id)
-    cvr = CalculateVoteResult.new(params[:id])    
-    @vote_result = cvr.get
+    @game.user_id == current_user.id ? @are_this_my_games = true : @are_this_my_games = false
+
+    if @game.status == 'completed' || @are_this_my_games
+      cvr = CalculateVoteResult.new(params[:id])
+      @vote_result = cvr.get
+    end
   end
 
   private

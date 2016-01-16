@@ -7,6 +7,6 @@
     %tbody
       - @vote_result.each do |vr|
         %tr
-          %td= vr[0]
+          %td= vr[0].nil? ? '(not voted)' : vr[0]
           %td= vr[1][:score]
           %td= vr[1][:users].join(', ')

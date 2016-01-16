@@ -4,7 +4,7 @@
       %option{value: 0, id: 'option_user_id_0'} 
         (Select user)
       - User.all.order("name asc").each do |u|
-        %option{value: u.id, id: 'option_user_id_' + u.id.to_s} 
+        %option{value: u.id, id: 'option_user_id_' + u.id.to_s}
           = u
   .col-md-1      
     = link_to 'add','#', id: 'add_link', class: 'btn btn-success not-active'

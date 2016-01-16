@@ -21,9 +21,17 @@
   %br
   = @game.status
 
-= render 'chooser'
-= render 'vote_result'
+- if @game.status == 'active'
+  - if @game.user_id == current_user.id && @game_user.nil?
+    %p You are the owner of this game. If you want to vote, you must add yourself to the players.
+  -else  
+    = render 'chooser'
+
+- if @game.status == 'completed' || @are_this_my_games
+  = render 'vote_result'
 
 = link_to t('.back', :default => t("helpers.links.back")), games_path, :class => 'btn btn-default'
-= link_to t('.edit', :default => t("helpers.links.edit")), edit_game_path(@game), :class => 'btn btn-default'
-= link_to t('.destroy', :default => t("helpers.links.destroy")), game_path(@game), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+
+- if @are_this_my_games
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_game_path(@game), :class => 'btn btn-default'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), game_path(@game), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
