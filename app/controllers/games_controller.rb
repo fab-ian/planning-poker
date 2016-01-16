@@ -3,8 +3,9 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
   def index
-    @my_games = Game.my_games(current_user)
-    @games = Game.not_my_games(current_user)
+    current_user ? user_id = current_user.id : user_id = 0
+    @my_games = Game.my_games(user_id)
+    @games = Game.not_my_games(user_id)
   end
 
   def new

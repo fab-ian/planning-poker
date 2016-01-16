@@ -9,8 +9,8 @@ class Game < ActiveRecord::Base
   scope :not_my_games, -> (p){Game.find_by_sql(
       "select g.id, g.name, g.content, g.status, g.user_id from games as g "\
       "left join game_users as gu on gu.game_id = g.id "\
-      "where g.user_id <> #{p.id} "\
-      "and gu.user_id = #{p.id} "\
+      "where g.user_id <> #{p} "\
+      "and gu.user_id = #{p} "\
       "and g.status = 'active' "\
     )}
 
