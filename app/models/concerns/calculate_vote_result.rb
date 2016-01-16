@@ -14,7 +14,7 @@ class CalculateVoteResult
       hash[gu.score][:users] << gu.user.to_s
     end
 
-    sort = hash.sort_by{|k, v| v[:score]}
+    sort = hash.sort_by{|_, v| v[:score]}
     sort.reverse
   end
 

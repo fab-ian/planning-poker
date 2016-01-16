@@ -5,6 +5,10 @@ $(function(){
     user_li_tag = get_user_li_tag(user_id, user_name, false, 0)
 
     $("#users_list").append(user_li_tag);
+    $("#option_user_id_"+ user_id).hide();
+    $("#option_user_id_0").attr("selected","selected");
+    $("#add_link").addClass("not-active")
+
     event.preventDefault();
   });  
 });
@@ -25,3 +29,9 @@ var get_user_li_tag = function(user_id, user_name, edit, game_user_id){
 
   return user_li_tag
 };
+
+$(function(){
+  $("#selected_user_id").change(function(){
+    $("#add_link").removeClass("not-active")
+  })
+})
