@@ -6,15 +6,20 @@ class Game < ActiveRecord::Base
   accepts_nested_attributes_for :game_users, allow_destroy: true
 
   scope :my_games, -> (p){where(user_id: p).order("created_at desc")}
-  scope :not_my_games, -> (p){Game.find_by_sql(
-      "select g.id, g.name, g.content, g.status, g.user_id from games as g "\
-      "left join game_users as gu on gu.game_id = g.id "\
-      "where g.user_id <> #{p} "\
-      "and gu.user_id = #{p} "\
-      "and g.status = 'active' "\
-    )}
 
   def self.status
     %w[new active completed]
+  end
+
+  def self.not_my_games(user_id)
+    query = <<-SQL
+      select g.id, g.name, g.content, g.status, g.user_id from games as g 
+      join game_users as gu on gu.game_id = g.id 
+      where g.user_id <> #{user_id}
+      and gu.user_id = #{user_id}
+      and g.status = 'active'
+    SQL
+
+    self.find_by_sql(query)
   end
 end

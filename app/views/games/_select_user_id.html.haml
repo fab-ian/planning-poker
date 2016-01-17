@@ -3,8 +3,10 @@
     %select{id: 'selected_user_id', class: 'form-control'}
       %option{value: 0, id: 'option_user_id_0'} 
         (Select user)
+      - chosed_users_id = Game.find_by(id: @game.id).users.map {|el| el.id}
       - User.all.order("name asc").each do |u|
-        %option{value: u.id, id: 'option_user_id_' + u.id.to_s}
+        - chosed_users_id.find{|el| el == u.id}.present? ? display = "display:none" : display = ""
+        %option{value: u.id, id: 'option_user_id_' + u.id.to_s, style: display}
           = u
   .col-md-1      
     = link_to 'add','#', id: 'add_link', class: 'btn btn-success not-active'
