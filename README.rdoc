@@ -1,6 +1,4 @@
 
-[![Code Climate](https://codeclimate.com/repos/56941d3011eac97bc1000881/badges/ff2fcef0be71cb6c3ea3/gpa.svg)](https://codeclimate.com/repos/56941d3011eac97bc1000881/feed)
-
 == README
 
 * Ruby version: 2.2.4
