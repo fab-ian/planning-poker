@@ -3,9 +3,9 @@
     %select{id: 'selected_user_id', class: 'form-control'}
       %option{value: 0, id: 'option_user_id_0'} 
         (Select user)
-      - chosed_users_id = Game.find_by(id: @game.id).users.map {|el| el.id}
+      - chosed_users_id = Game.find_by(id: @game.id).users.map {|el| el.id} if @game.id
       - User.all.order("name asc").each do |u|
-        - chosed_users_id.find{|el| el == u.id}.present? ? display = "display:none" : display = ""
+        - chosed_users_id.find{|el| el == u.id}.present? ? display = "display:none" : display = "" if @game.id
         %option{value: u.id, id: 'option_user_id_' + u.id.to_s, style: display}
           = u
   .col-md-1      
