@@ -24,4 +24,11 @@ GameUser.create!(user_id: 7, game: g, score: 21)
 GameUser.create!(user_id: 8, game: g, score: 13)
 GameUser.create!(user_id: 9, game: g, score: 8)
 
+g = Game.create!(name: 'Game from non-admin player', content:'Your description :)',
+  status: 'active', user_id: 2 )
+
+GameUser.create!(user_id: 1, game: g, score: 56)
+GameUser.create!(user_id: 4, game: g, score: 34)
+GameUser.create!(user_id: 3, game: g, score: 34)
+
 p 'seeds created.'

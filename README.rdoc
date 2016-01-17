@@ -1,28 +1,12 @@
+
+[![Code Climate](https://codeclimate.com/repos/56941d3011eac97bc1000881/badges/ff2fcef0be71cb6c3ea3/gpa.svg)](https://codeclimate.com/repos/56941d3011eac97bc1000881/feed)
+
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.2.4
 
-Things you may want to cover:
+* Rails 4.2.5
 
-* Ruby version
+* login: admin@admin.com, password: adminadmin
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Heroku: https://fk-planning-poker.herokuapp.com/
