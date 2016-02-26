@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.4'
+ruby '2.3.0'
 
 gem 'haml'
 gem 'haml-rails'
@@ -13,7 +13,7 @@ gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
 # Use SCSS for stylesheets
