@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   has_many :game_users
   has_many :game, through: :game_users
   has_many :games
+  has_many :group_users
+  has_many :group, through: :group_users
+
+  scope :all_name_asc, -> {all.order("name asc").decorate}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

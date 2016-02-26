@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'groups/new'
+
+  get 'groups/edit'
+
   resources :game_users, only: [:update]
 
   resources :games do 
