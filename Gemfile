@@ -12,6 +12,7 @@ gem 'dotenv-rails'
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 gem 'draper'
+gem 'decent_exposure'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
