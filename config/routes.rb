@@ -5,10 +5,7 @@ Rails.application.routes.draw do
   get 'groups/edit'
 
   resources :game_users, only: [:update]
-
-  resources :games do 
-    get 'remove_user', on: :member
-  end
+  resources :games
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
