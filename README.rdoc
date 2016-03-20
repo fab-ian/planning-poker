@@ -3,7 +3,7 @@
 
 * Ruby version: 2.2.4
 
-* Rails 4.2.5
+* Rails 4.2.6
 
 * login: admin@admin.com, password: adminadmin
 
