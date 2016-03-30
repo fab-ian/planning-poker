@@ -1,14 +1,22 @@
+Assignment.destroy_all
 GameUser.destroy_all
 Game.destroy_all
 User.destroy_all
+Role.destroy_all
 
-User.create(name: 'Admin', surname: 'Adminski', email: 'admin@admin.com', password:'adminadmin', role: 'admin')
+r1 = Role.create(name: 'admin')
+r2 = Role.create(name: 'user')
+
+u = User.create(name: 'Admin', surname: 'Adminski', email: 'admin@admin.com', password:'adminadmin', role: 'admin')
+Assignment.create(user_id: u.id, role_id: r1.id)
+Assignment.create(user_id: u.id, role_id: r2.id)
 
 10.times do 
   first_name = Faker::Name.first_name
 
-  User.create!(name: first_name, surname: Faker::Name.last_name,
+  u_curr = User.create!(name: first_name, surname: Faker::Name.last_name,
    email: first_name + '@pk.com', password:'player16', role: 'player')
+  Assignment.create(user_id: u_curr.id, role_id: r2.id)
 end
 
 g = Game.create!(name: 'To be, or not to be... a RoR programmer?', content:'Writing a novel for RoR developers...',

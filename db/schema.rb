@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226163013) do
+ActiveRecord::Schema.define(version: 20160330171147) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "assignments", ["role_id"], name: "index_assignments_on_role_id"
+  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id"
 
   create_table "game_users", force: :cascade do |t|
     t.integer  "game_id"
@@ -35,24 +45,11 @@ ActiveRecord::Schema.define(version: 20160226163013) do
 
   add_index "games", ["user_id"], name: "index_games_on_user_id"
 
-  create_table "group_users", force: :cascade do |t|
-    t.integer  "group_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "group_users", ["group_id"], name: "index_group_users_on_group_id"
-  add_index "group_users", ["user_id"], name: "index_group_users_on_user_id"
-
-  create_table "groups", force: :cascade do |t|
+  create_table "roles", force: :cascade do |t|
     t.string   "name"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "groups", ["user_id"], name: "index_groups_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

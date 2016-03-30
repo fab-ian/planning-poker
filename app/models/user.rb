@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :game_users
   has_many :game, through: :game_users
   has_many :games
+  has_many :assignments
+  has_many :roles, through: :assignments
 
   scope :all_name_asc, -> {all.order("name asc").decorate}
 
@@ -15,4 +17,8 @@ class User < ActiveRecord::Base
   def to_s
     "#{name} #{surname}"
   end
+
+  def has_role?(role_sym)
+    roles.any? { |r| r.name.underscore.to_sym == role_sym }
+  end  
 end

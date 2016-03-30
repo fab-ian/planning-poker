@@ -13,6 +13,7 @@ gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 gem 'draper'
 gem 'decent_exposure'
+gem 'cancancan', '~> 1.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -53,7 +54,7 @@ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
   gem 'pry-byebug'
   gem 'rspec-rails'
 end

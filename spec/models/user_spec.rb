@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  #user = FactoryGirl.create(:user)
   let(:user) {FactoryGirl.create(:user)}
 
   it 'has a valid factory' do 
