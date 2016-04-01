@@ -43,7 +43,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.2)
-    cancancan (1.10.1)
+    cancancan (1.13.1)
     capybara (2.6.2)
       addressable
       mime-types (>= 1.16)
