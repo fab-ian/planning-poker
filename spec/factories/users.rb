@@ -4,6 +4,5 @@ FactoryGirl.define do
     u.surname Faker::Name.last_name
     u.sequence(:email) {|n| "user#{n}@example.com"}
     u.password 'player16'
-    u.role 'player'
   end
 end
