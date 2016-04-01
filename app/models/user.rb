@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :games
   has_many :assignments
   has_many :roles, through: :assignments
+  has_many :invitations, class_name: 'Invitation', foreign_key: :from_user_id
+  has_many :invitations, class_name: 'Invitation', foreign_key: :to_user_id
 
   scope :all_name_asc, -> {all.order("name asc").decorate}
 

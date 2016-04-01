@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401124010) do
+ActiveRecord::Schema.define(version: 20160401145821) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -44,6 +44,19 @@ ActiveRecord::Schema.define(version: 20160401124010) do
   end
 
   add_index "games", ["user_id"], name: "index_games_on_user_id"
+
+  create_table "invitations", force: :cascade do |t|
+    t.integer  "from_user_id",                 null: false
+    t.integer  "to_user_id",                   null: false
+    t.integer  "game_id",                      null: false
+    t.boolean  "accepted",     default: false, null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "invitations", ["from_user_id"], name: "index_invitations_on_from_user_id"
+  add_index "invitations", ["game_id"], name: "index_invitations_on_game_id"
+  add_index "invitations", ["to_user_id"], name: "index_invitations_on_to_user_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
