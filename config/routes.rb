@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :invitations, only: [:new, :create] do 
+  resources :invitations, only: [:create] do 
+    get 'new', on: :member
     get 'accept', on: :member
   end
 
