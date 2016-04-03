@@ -15,7 +15,7 @@ Assignment.create(user: u, role: r2)
   first_name = Faker::Name.first_name
 
   u_curr = User.create!(name: first_name, surname: Faker::Name.last_name,
-   email: first_name + '@pk.com', password:'player16', role: 'player')
+   email: first_name + '@pk.com', password:'player16')
   Assignment.create(user: u_curr, role: r2)
 end
 
