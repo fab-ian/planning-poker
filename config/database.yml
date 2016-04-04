@@ -22,9 +22,9 @@ test:
 
 production:
   adapter: postgresql
-  database: planning-poker
-  host: localhost
+  database: p1077_planingp
+  host: pgsql3.mydevil.net
   port: 5432
-  username: postgres
-  password: postgres
+  username: p1077_planingp
+  password: zxdUPLNk4rB4yYsfgqZu
   
