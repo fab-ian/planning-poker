@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe InvitationMailer, type: :mailer do
   describe "invite" do
-    let(:mail) { InvitationMailer.invite('to@example.org', 'Igor Szybki') }
+    let(:mail) { InvitationMailer.invite('to@example.org', 'Igor Szybki', 1, '12345678') }
 
     it "renders the headers" do
       expect(mail.subject).to eq("Invite")

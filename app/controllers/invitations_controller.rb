@@ -1,20 +1,24 @@
 class InvitationsController < ApplicationController
   expose(:invitation)
 
-  def new
-    @game_id = params[:id]
-  end
+  # def new
+  #   @game_id = params[:id]
+  # end
 
   def create
+    return if User.find_by(email: invitation_params[:email]).present?
+
     invitation.transaction do
       game_id = invitation_params[:game_id]
       email = invitation_params[:email]
+      full_name = invitation_params[:name] + " " + invitation_params[:surname]
+      password = '12345678'
 
       u = User.new
       u.name = invitation_params[:name]
       u.surname = invitation_params[:surname]
       u.email = email
-      u.password = '12345678'
+      u.password = password 
 
       if u.save 
         u.assignments.create(role_id: 2) #role = user
@@ -24,18 +28,22 @@ class InvitationsController < ApplicationController
         invitation.game_id = game_id
 
         if invitation.save
-          InvitationMailer.invite(email, u.name + " " + u.surname).deliver_now
+          InvitationMailer.invite(email, full_name, invitation.id, password).deliver_now
           redirect_to root_url, notice: 'Invitation was send successfully'
         else
           redirect_to root_url, notice: 'Invitation wasn\'t send successfully'
         end
       else
-        redirect_to invitation_path(game_id), notice: 'User wasn\'t successfully added'
+        render :new, notice: 'User wasn\'t successfully added'
       end
     end
   end
 
   def accept
+    gu = GameUser.new(user_id: invitation.to_user_id, game_id: invitation.game_id)
+    @ok = gu.save
+    # @user_games = User.find(invitation.to_user_id).game_users.includes(:game).map {|gu| [gu.game_id, gu.game.name]}
+    @user_games = User.user_games(invitation.to_user_id)
   end
 
   private

@@ -9,7 +9,7 @@
     .navbar-collapse.collapse.navbar-responsive-collapse
       %ul.nav.navbar-nav
         %li= link_to "Admin", rails_admin_path, method: :get
-        %li= link_to "Link 2", "/path2"
+        %li= link_to 'Invite new player by email', new_invitation_path
 
       %ul{class: "nav navbar-nav navbar-right"}
         - if user_signed_in?

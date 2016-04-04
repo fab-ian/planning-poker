@@ -1,2 +1,8 @@
 %h1 Invitations#accept
 %p Find me in app/views/invitations/accept.html.haml
+= "OK: #{@ok}"
+= "Password: #{@password}"
+
+%ul
+  - @user_games.each do |ug|
+    %li= link_to ug[1], game_path(ug[0])

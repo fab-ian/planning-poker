@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :invitations, class_name: 'Invitation', foreign_key: :to_user_id
 
   scope :all_name_asc, -> {all.order("name asc").decorate}
+  scope :user_games, -> (user_id){find(user_id).game_users.includes(:game).map {|gu| [gu.game_id, gu.game.name]}}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

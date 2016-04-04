@@ -1,2 +1,3 @@
 %p
-  = @greeting + ", find me in app/views/invitation_mailer/invite.html.haml"
+  = @greeting
+  = link_to "Accept invitation", accept_invitation_url(@invitation_id)
