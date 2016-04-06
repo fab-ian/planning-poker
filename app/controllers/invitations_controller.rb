@@ -1,4 +1,5 @@
 class InvitationsController < ApplicationController
+  before_action :authenticate_user!, except: [:accept]
   expose(:invitation)
 
   def create
