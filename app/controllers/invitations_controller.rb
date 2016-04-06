@@ -1,10 +1,6 @@
 class InvitationsController < ApplicationController
   expose(:invitation)
 
-  # def new
-  #   @game_id = params[:id]
-  # end
-
   def create
     return if User.find_by(email: invitation_params[:email]).present?
 
@@ -42,7 +38,6 @@ class InvitationsController < ApplicationController
   def accept
     gu = GameUser.new(user_id: invitation.to_user_id, game_id: invitation.game_id)
     @ok = gu.save
-    # @user_games = User.find(invitation.to_user_id).game_users.includes(:game).map {|gu| [gu.game_id, gu.game.name]}
     @user_games = User.user_games(invitation.to_user_id)
   end
 
