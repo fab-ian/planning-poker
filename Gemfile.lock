@@ -63,6 +63,7 @@ GEM
     coffee-script-source (1.10.0)
     commonjs (0.2.7)
     concurrent-ruby (1.0.1)
+    database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     decent_exposure (2.3.3)
     devise (3.5.6)
@@ -290,6 +291,7 @@ DEPENDENCIES
   cancancan (~> 1.10)
   capybara
   coffee-rails (~> 4.1.0)
+  database_cleaner
   decent_exposure
   devise
   dotenv-rails
