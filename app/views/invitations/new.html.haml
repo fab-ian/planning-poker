@@ -1,22 +1,31 @@
-%h1 Invitations#new
+%h1 Invitation
 
 = form_tag({controller: 'invitations', action: 'create'}, class: 'form form-horizontal game') do
   .form-group  
-    / = hidden_field_tag(:game_id, @game_id)
-    %p
-      = label_tag :name
-      = text_field_tag :name, nil, required: true
-    %p
-      = label_tag :surname
-      = text_field_tag :surname, nil, required: true
+    .col-lg-2
+      = label_tag :name, nil, class: 'control-label'
+    .col-lg-10
+      = text_field_tag :name, nil, class: 'form-control', required: true
 
-    %p
-      = label_tag :email
-      = email_field_tag :email, nil, required: true
+  .form-group  
+    .col-lg-2
+      = label_tag :surname, nil, class: 'control-label'
+    .col-lg-10
+      = text_field_tag :surname, nil, class: 'form-control', required: true
 
-    %p
-      = label_tag :game_id
-      = select_tag :game_id, options_for_select(Game.all.map{ |g| [g.name, g.id] })
+  .form-group  
+    .col-lg-2
+      = label_tag :email, nil, class: 'control-label'
+    .col-lg-10
+      = email_field_tag :email, nil, class: 'form-control', required: true
 
-    = submit_tag('Invite...') 
+  .form-group  
+    .col-lg-2
+      = label_tag :game_id, nil, class: 'control-label'
+    .col-lg-10
+      = select_tag :game_id, options_for_select(Game.all.map{ |g| [g.name, g.id] }), class: 'form-control'
+
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = submit_tag 'Invite', class: 'btn btn-primary'
   
