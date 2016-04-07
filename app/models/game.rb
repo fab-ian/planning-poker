@@ -3,6 +3,8 @@ class Game < ActiveRecord::Base
   has_many :users, through: :game_users
   belongs_to :user
   
+  validates :name, :content, presence: true
+
   accepts_nested_attributes_for :game_users, allow_destroy: true
 
   scope :my_games, -> (p){where("user_id = ?", p).order("created_at desc")}
