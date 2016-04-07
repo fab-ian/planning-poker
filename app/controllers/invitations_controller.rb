@@ -37,9 +37,10 @@ class InvitationsController < ApplicationController
   end
 
   def accept
-    gu = GameUser.new(user_id: invitation.to_user_id, game_id: invitation.game_id)
+    invited_user_id = invitation.to_user_id
+    gu = GameUser.new(user_id: invited_user_id, game_id: invitation.game_id)
     @ok = gu.save
-    @user_games = User.user_games(invitation.to_user_id)
+    @user_games = User.user_games(invited_user_id)
   end
 
   private
