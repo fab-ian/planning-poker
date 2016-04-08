@@ -9,6 +9,9 @@ class Game < ActiveRecord::Base
 
   scope :my_games, -> (p){where("user_id = ?", p).order("created_at desc")}
 
+  after_save :increment_game
+  after_destroy :decrement_game
+
   def self.status
     %w[new active completed]
   end
@@ -21,5 +24,13 @@ class Game < ActiveRecord::Base
       and gu.user_id = #{user_id}
       and g.status = 'active'
     SQL
+  end
+
+  def increment_game
+    $GAMES += 1
+  end
+
+  def decrement_game
+    $GAMES -= 1
   end
 end

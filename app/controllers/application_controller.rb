@@ -13,6 +13,9 @@ class ApplicationController < ActionController::Base
     strategy DecentExposure::StrongParametersStrategy
   end
 
+  $USERS = User.count if $USERS.nil?
+  $GAMES = Game.count if $GAMES.nil?
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up)  << :name
