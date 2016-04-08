@@ -1,12 +1,12 @@
 %table.table
   %thead
     %tr
-      %th value
-      %th quantity
-      %th users
+      %th= t('vote.value')
+      %th= t('vote.quantity')
+      %th= t('user.users')
     %tbody
       - @vote_result.each do |vr|
         %tr
-          %td= vr[0].nil? ? '(They didn\'t vote)' : vr[0]
+          %td= vr[0].nil? ? "(#{t('vote.they_didnt_vote')})" : vr[0]
           %td= vr[1][:score]
           %td= vr[1][:users].join(', ')

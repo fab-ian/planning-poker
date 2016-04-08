@@ -27,8 +27,8 @@
           = yield
         .col-lg-3
           .well.sidebar-nav
-            %h3 Stats
-            %P Users: #{$USERS}
-            %p Games: #{$GAMES}
+            %h3 #{t('stats')}
+            %p  #{t('user.users')} : #{$USERS}
+            %p  #{t('game.games')} : #{$GAMES}
       %footer
         %p &copy; Company 2016

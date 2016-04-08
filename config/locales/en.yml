@@ -20,4 +20,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  id: "Id"
+  stats: "Stats"
+
+  game:
+    name: "Name"
+    content: "Content"
+    status: "Status"
+    games: "Games"
+
+  user:
+    add_user: "Add user"
+    select_user: "Select user"
+    users: "Users"
+
+  statemant:
+    accept_your_choice: "accept your choice"
+
+  vote:
+    value: "Value"
+    quantity: "Quantity"
+    they_didnt_vote: "They didn\'t vote"
