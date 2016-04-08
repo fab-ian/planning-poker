@@ -2,10 +2,10 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:content)
-      %th= model_class.human_attribute_name(:status)
+      %th= t('id')
+      %th= t('game.name')
+      %th= t('game.content')
+      %th= t('game.status')
       - if my_games
         %th=t '.actions', :default => t("helpers.actions") 
   %tbody
