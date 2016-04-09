@@ -9,7 +9,7 @@ class Game < ActiveRecord::Base
 
   scope :my_games, -> (p){where("user_id = ?", p).order("created_at desc")}
 
-  after_save :increment_game
+  after_create :increment_game
   after_destroy :decrement_game
 
   def self.status

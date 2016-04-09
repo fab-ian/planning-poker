@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   scope :all_name_asc, -> {all.order("name asc").decorate}
   scope :user_games, -> (user_id){find(user_id).game_users.includes(:game).map {|gu| [gu.game_id, gu.game.name]}}
 
-  after_save :increment_user
+  after_create :increment_user
   after_destroy :decrement_user
 
   # Include default devise modules. Others available are:
