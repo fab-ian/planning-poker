@@ -7,4 +7,6 @@
 
 * login: admin@admin.com, password: adminadmin
 
-* Heroku: https://fk-planning-poker.herokuapp.com/
+* Deploy: http://pp.biegokracja.pl/
+
+* Default password for all invited by email users : 12345678
