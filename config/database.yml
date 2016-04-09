@@ -22,8 +22,8 @@ test:
 
 production:
   adapter: postgresql
-  database: p1077_planingp
+  database: p1077_planingp2
   host: pgsql3.mydevil.net
   port: 5432
-  username: p1077_planingp
-  password: zxdUPLNk4rB4yYsfgqZu
+  username: p1077_planingp2
+  password: 29HUBWFP4XuDpi8lL1rG

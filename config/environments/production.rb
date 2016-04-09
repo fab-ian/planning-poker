@@ -86,4 +86,4 @@ Rails.application.configure do
 
 end
 
- Rails.application.routes.default_url_options[:host] = 'https://fk-planning-poker.herokuapp.com'
+ Rails.application.routes.default_url_options[:host] = 'http://pp.biegokracja.pl'
