@@ -42,9 +42,9 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    byebug (8.2.2)
+    byebug (8.2.4)
     cancancan (1.13.1)
-    capybara (2.6.2)
+    capybara (2.7.0)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -85,10 +85,10 @@ GEM
       request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.6.0)
-    factory_girl (4.5.0)
+    factory_girl (4.7.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.6.0)
-      factory_girl (~> 4.5.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
     faker (1.6.3)
       i18n (~> 0.5)
@@ -210,7 +210,7 @@ GEM
     rdoc (4.2.2)
       json (~> 1.4)
     remotipart (1.2.1)
-    request_store (1.3.0)
+    request_store (1.3.1)
     responders (2.1.2)
       railties (>= 4.2.0, < 5.1)
     rspec-core (3.4.4)
@@ -251,7 +251,7 @@ GEM
     sexp_processor (4.7.0)
     slop (3.6.0)
     spring (1.6.4)
-    sprockets (3.5.2)
+    sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.0.4)
@@ -280,7 +280,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    websocket (1.2.2)
+    websocket (1.2.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -288,36 +288,36 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cancancan (~> 1.10)
-  capybara
+  cancancan (~> 1.13.1)
+  capybara (~> 2.7.0)
   coffee-rails (~> 4.1.0)
-  database_cleaner
-  decent_exposure
-  devise
-  dotenv-rails
-  draper
-  factory_girl_rails
-  faker
-  haml
-  haml-rails
-  jbuilder (~> 2.0)
-  jquery-rails
-  jquery-turbolinks
-  pg
-  pry-byebug
+  database_cleaner (~> 1.5.1)
+  decent_exposure (~> 2.3.3)
+  devise (~> 3.5.6)
+  dotenv-rails (~> 2.1.1)
+  draper (~> 2.1.0)
+  factory_girl_rails (~> 4.7.0)
+  faker (~> 1.6.3)
+  haml (~> 4.0.5)
+  haml-rails (~> 0.9)
+  jbuilder (~> 2.4.1)
+  jquery-rails (~> 4.1.1)
+  jquery-turbolinks (~> 2.1.0)
+  pg (~> 0.18.4)
+  pry-byebug (~> 3.3.0)
   rails (= 4.2.6)
-  rails_12factor
-  rails_admin
-  rspec-rails
+  rails_12factor (~> 0.0.3)
+  rails_admin (~> 0.8.1)
+  rspec-rails (~> 3.4.2)
   sass-rails (~> 5.0)
-  sdoc (~> 0.4.0)
-  selenium-webdriver
-  spring
-  sqlite3
-  turbolinks
-  twitter-bootstrap-rails
+  sdoc (~> 0.4.1)
+  selenium-webdriver (~> 2.53.0)
+  spring (~> 1.6.4)
+  sqlite3 (~> 1.3.11)
+  turbolinks (~> 2.5.3)
+  twitter-bootstrap-rails (~> 3.2.2)
   uglifier (>= 1.3.0)
-  web-console (~> 2.0)
+  web-console (~> 2.3.0)
 
 BUNDLED WITH
    1.11.2
