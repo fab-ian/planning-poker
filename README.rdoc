@@ -10,3 +10,5 @@
 * Deploy: http://pp.biegokracja.pl/
 
 * Default password for all invited by email users : 12345678
+
+* You can use mail function, setting a Gmail account in '.env_sample'. After updating data change the name of file to '.env'. You have to set in Gmail 'Allow the use of less secure applications' (https://myaccount.google.com/security?utm_source=OGB#connectedapps)
