@@ -1,10 +1,11 @@
+$GAMES = 0
+$USERS = 0
+
 Assignment.destroy_all
 GameUser.destroy_all
 Game.destroy_all
 User.destroy_all
 Role.destroy_all
-$GAMES = 0
-$USERS = 0
 
 r1 = Role.create(name: 'admin')
 r2 = Role.create(name: 'user')
