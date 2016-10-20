@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   has_many :games
   has_many :assignments
   has_many :roles, through: :assignments
-  has_many :invitations, class_name: 'Invitation', foreign_key: :from_user_id
-  has_many :invitations, class_name: 'Invitation', foreign_key: :to_user_id
+  has_many :invitations_from, class_name: 'Invitation', foreign_key: :from_user_id
+  has_many :invitations_to, class_name: 'Invitation', foreign_key: :to_user_id
 
   scope :all_name_asc, -> {all.order("name asc").decorate}
   scope :user_games, -> (user_id){find(user_id).game_users.includes(:game).map {|gu| [gu.game_id, gu.game.name]}}
